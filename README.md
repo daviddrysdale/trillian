@@ -76,7 +76,8 @@ will never be necessary.
 
 To build and test Trillian you need:
 
- - Go 1.9 or later.
+ - Go 1.11 or later.
+ - Go Module support enabled (`export GO111MODULE=on`)
 
 To run many of the tests (and production deployment) you need:
 
@@ -204,6 +205,11 @@ go generate -x ./...  # hunts for //go:generate comments and runs them
 The Trillian codebase uses the
 [modules](https://github.com/golang/go/wiki/Modules) feature of Go 1.11 to
 manage the dependencies of the codebase.
+
+This feature needs to be enabled with
+```bash
+export GO111MODULE=on
+```
 
 ### Running Codebase Checks
 
