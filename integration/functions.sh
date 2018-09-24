@@ -109,8 +109,8 @@ log_prep_test() {
   local log_signer_count=${2:-1}
 
   echo "Building Trillian log code"
-  go build ${GOFLAGS} github.com/google/trillian/server/trillian_log_server/
-  go build ${GOFLAGS} github.com/google/trillian/server/trillian_log_signer/
+  go build github.com/google/trillian/server/trillian_log_server/
+  go build github.com/google/trillian/server/trillian_log_signer/
 
   # Wipe the test database
   yes | "${TRILLIAN_PATH}/scripts/resetdb.sh"
@@ -274,7 +274,7 @@ map_prep_test() {
   local rpc_server_count=${1:-1}
 
   echo "Building Trillian map code"
-  go build ${GOFLAGS} github.com/google/trillian/server/trillian_map_server/
+  go build github.com/google/trillian/server/trillian_map_server/
 
   # Wipe the test database
   yes | "${TRILLIAN_PATH}/scripts/resetdb.sh"
@@ -325,7 +325,7 @@ map_provision() {
   local count=${2:-1}
 
   echo 'Building createtree'
-  go build ${GOFLAGS} github.com/google/trillian/cmd/createtree/
+  go build github.com/google/trillian/cmd/createtree/
 
   for ((i=0; i < count; i++)); do
     local map_id=$(./createtree \
